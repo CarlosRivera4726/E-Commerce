@@ -1,1 +1,44 @@
 ecom/.env
+ECommerceWeb/node_modules
+ECommerceWeb/.env
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+ECommerceWeb/dist
+ECommerceWeb/tmp
+ECommerceWeb/out-tsc
+ECommerceWeb/bazel-out
+
+# Node
+ECommerceWeb/npm-debug.log
+ECommerceWeb/yarn-error.log
+
+# IDEs and editors
+ECommerceWeb/.idea/
+ECommerceWeb/.project
+ECommerceWeb/.classpath
+ECommerceWeb/.c9/
+ECommerceWeb/*.launch
+ECommerceWeb/.settings/
+ECommerceWeb/*.sublime-workspace
+
+# Visual Studio Code
+ECommerceWeb/.vscode/*
+ECommerceWeb/!.vscode/settings.json
+ECommerceWeb/!.vscode/tasks.json
+ECommerceWeb/!.vscode/launch.json
+ECommerceWeb/!.vscode/extensions.json
+ECommerceWeb/.history/*
+
+# Miscellaneous
+ECommerceWeb//.angular/cache
+ECommerceWeb/.sass-cache/
+ECommerceWeb//connect.lock
+ECommerceWeb//coverage
+ECommerceWeb/libpeerconnection.log
+ECommerceWeb/testem.log
+ECommerceWeb/typings
+
+# System files
+ECommerceWeb/.DS_Store
+ECommerceWeb/Thumbs.db
