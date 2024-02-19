@@ -31,10 +31,10 @@ ECommerceWeb/!.vscode/extensions.json
 ECommerceWeb/.history/*
 
 # Miscellaneous
-ECommerceWeb//.angular/cache
+ECommerceWeb/.angular/cache
 ECommerceWeb/.sass-cache/
-ECommerceWeb//connect.lock
-ECommerceWeb//coverage
+ECommerceWeb/connect.lock
+ECommerceWeb/coverage
 ECommerceWeb/libpeerconnection.log
 ECommerceWeb/testem.log
 ECommerceWeb/typings
