@@ -10,6 +10,8 @@ import com.ecommerce.ecom.entity.User;
 import com.ecommerce.ecom.enums.UserRol;
 import com.ecommerce.ecom.repository.UserRepository;
 
+import jakarta.annotation.PostConstruct;
+
 @Service
 public class AuthServiceImpl implements AuthService{
     @Autowired
@@ -24,8 +26,37 @@ public class AuthServiceImpl implements AuthService{
 
         user.setEmail(signupRequest.getEmail());
         user.setName(signupRequest.getName());
-        user.setPassword(new BCryptPasswordEncoder().encode(signupRequest.getPassword()));
+        user.setPassword(bCryptPasswordEncoder.encode(signupRequest.getPassword()));
         user.setRole(UserRol.CUSTOMER);
+
+        User createdUser = userRepository.save(user);
+
+        UserDto userDto = new UserDto();
+
+        userDto.setId_user(createdUser.getId_user());
+
+        return userDto;
+    }
+
+    public Boolean hasUserWithEmail(String email)
+    {
+        return userRepository.findFirstByEmail(email).isPresent();
+    }
+
+
+    @PostConstruct
+    public void createAdminAccount()
+    {
+        User adminAccount = userRepository.findByRole(UserRol.ADMIN);
+        if(adminAccount == null)
+        {
+            User user = new User();
+            user.setEmail("admin@mail.com");
+            user.setName("Admin");
+            user.setRole(UserRol.ADMIN);
+            user.setPassword(bCryptPasswordEncoder.encode("admin"));
+            userRepository.save(user);
+        }
     }
 
 }
